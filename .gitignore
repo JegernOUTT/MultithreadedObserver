@@ -1,0 +1,10 @@
+CMakeCache.txt
+CmakeFiles
+MakeFile
+bin
+*.cmake
+build
+builds
+*.o
+bandit
+
