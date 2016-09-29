@@ -1,0 +1,4 @@
+[submodule "observer/external/bandit"]
+	path = observer/external/bandit
+	url = https://github.com/joakimkarlsson/bandit.git
+

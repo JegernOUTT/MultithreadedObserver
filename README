@@ -1,10 +1,6 @@
-The travelling salesman problem (TSP) asks the following question: Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city? It is an NP-hard problem in combinatorial optimization, important in operations research and theoretical computer science.
+This is an implementation of Observer pattern. It has only one class (Observable), declared in one hpp file. Using some c++11/14 stuffs, variadic templates, sfinae, etc. 
 
-This is an implementation of the elastic net algorithm to solve the Traveling Salesman Problem.
+More information soon
 
 Available options:
---help (Print available options)
---input [path] (Input path for csv file with adjacency matrix)
---output [path] (Output path for hamiltonial path (task solution))
---test (Run unit tests)
-
+--soon--
