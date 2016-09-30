@@ -2,53 +2,66 @@
 #include <random>
 #include <chrono>
 #include <memory>
+#include <list>
 
 #include <bandit/bandit.h>
 #include "observer_mock.hpp"
 
 #include "../observer/Observable.hpp"
 
-go_bandit([](){
-    using namespace bandit;
-    using namespace std::chrono;
+namespace observertest
+{
+    go_bandit([]()
+              {
+                  using namespace bandit;
+                  using namespace std::chrono;
 
-    describe("Observer:", [](){
-        std::shared_ptr<Observer> o1;
-        std::shared_ptr<Observer> o2;
-        std::shared_ptr<Observer2> o3;
+                  using std::list;
+                  using std::shared_ptr;
+                  using std::weak_ptr;
 
-        before_each([&](){
-            o1 = std::make_shared<Observer>();
-            o2 = std::make_shared<Observer>();
-            o3 = std::make_shared<Observer2>();
-        });
+                  using observer::Observable;
+                  using observer::AddStatus;
+                  using observer::RemoveStatus;
 
-        it("Add to observerable with Observer", [&](){
-            using ObserverWeak = std::weak_ptr<Observer>;
-            AssertThat(observer::Observable<Observer>::
-                           AddObserverLocked(ObserverWeak{ o1->shared_from_this() }),
-                       Equals(observer::AddStatus::Success));
-            AssertThat(observer::Observable<Observer>::
-                           AddObserverLocked(ObserverWeak{ o2->shared_from_this() }),
-                       Equals(observer::AddStatus::Success));
-        });
-        it("Check observers lenght", [&](){
-            AssertThat(observer::Observable<Observer>::ObserversCount(),
-                       Equals(2));
-        });
+                  using std::make_shared;
 
-        it("Add to observerable with Observer2", [&](){
-            using Observer2Weak = std::weak_ptr<Observer2>;
-            AssertThat(observer::Observable<Observer2>::
-                           AddObserverLocked(Observer2Weak{ o3->shared_from_this() }),
-                       Equals(observer::AddStatus::Success));
-        });
-        it("Check observers2 lenght", [&](){
-            AssertThat(observer::Observable<Observer2>::ObserversCount(),
-                       Equals(1));
-        });
-    });
-});
+                  describe("Observer:", []()
+                  {
+                      list<shared_ptr<Observer_1>> observers;
+                      for (int i = 0; i < 100; ++i) observers.emplace_back(make_shared<Observer_1>());
+
+                      it("TryAddObserver with Observer_1", [&]()
+                      {
+                          using ObserverWeak = std::weak_ptr<Observer_1>;
+                          using ObservableSpec = Observable<Observer_1>;
+
+                          for (const auto& element: observers)
+                          {
+                              auto result = ObservableSpec::TryAddObserver(ObserverWeak{element}, 5s);
+                              AssertThat(result, Equals(AddStatus::Success));
+                          }
+                          AssertThat(Observable<Observer_1>::ObserversCount(), Equals(observers.size()));
+                      });
+
+                      it("TryRemoveObservers with Observer_1", [&]()
+                      {
+                          using ObserverWeak = std::weak_ptr<Observer_1>;
+                          using ObservableSpec = Observable<Observer_1>;
+
+                          AssertThat(Observable<Observer_1>::ObserversCount(), Equals(observers.size()));
+
+                          for (const auto& element: observers)
+                          {
+                              auto result = ObservableSpec::TryRemoveObserver(ObserverWeak{element}, 5s);
+                              AssertThat(result, Equals(RemoveStatus::Success));
+                          }
+                          AssertThat(Observable<Observer_1>::ObserversCount(), Equals(0));
+                      });
+
+                  });
+              });
+}
 
 
 int main(int argc, char ** argv)

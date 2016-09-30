@@ -13,6 +13,7 @@
 
 namespace observer
 {
+    template<typename Observer>
     using ObserverTrait = typename std::enable_if<is_observer<Observer>::value>::type;
 
     using std::unordered_map;
@@ -40,11 +41,10 @@ namespace observer
              typename Enable = void>
     class Observable
     {
-
     };
 
     template<typename Observer>
-    class Observable<Observer, ObserverTrait>
+    class Observable<Observer, ObserverTrait<Observer>>
     {
         using HashType = typename result_of<decltype(&Observer::Hash)(Observer)>::type;
         using ObserverShared = shared_ptr<Observer>;
@@ -83,18 +83,18 @@ namespace observer
     };
 
     template<typename Observer>
-    unordered_map<typename Observable<Observer, ObserverTrait>::HashType,
-                  typename Observable<Observer, ObserverTrait>::ObserverWeak>
-            Observable<Observer, ObserverTrait>::observers_;
+    unordered_map<typename Observable<Observer, ObserverTrait<Observer>>::HashType,
+                  typename Observable<Observer, ObserverTrait<Observer>>::ObserverWeak>
+            Observable<Observer, ObserverTrait<Observer>>::observers_;
 
     template<typename Observer>
-    timed_mutex Observable<Observer, ObserverTrait>::obervers_mu_;
+    timed_mutex Observable<Observer, ObserverTrait<Observer>>::obervers_mu_;
 
 
     template<typename Observer>
     template<typename _Rep, typename _Period>
     AddStatus
-    Observable<Observer, ObserverTrait>::TryAddObserver(typename Observable<Observer, ObserverTrait>::ObserverWeak observer,
+    Observable<Observer, ObserverTrait<Observer>>::TryAddObserver(typename Observable<Observer, ObserverTrait<Observer>>::ObserverWeak observer,
                                                         duration<_Rep, _Period> timeout) noexcept
     {
         if (observer.expired()) return AddStatus::InvalidPtr;
@@ -112,7 +112,7 @@ namespace observer
     template<typename Observer>
     template<typename _Rep, typename _Period>
     RemoveStatus
-    Observable<Observer, ObserverTrait>::TryRemoveObserver(typename Observable<Observer, ObserverTrait>::ObserverWeak
+    Observable<Observer, ObserverTrait<Observer>>::TryRemoveObserver(typename Observable<Observer, ObserverTrait<Observer>>::ObserverWeak
                                                             observer,
                                                             duration<_Rep, _Period> timeout) noexcept
     {
@@ -131,7 +131,7 @@ namespace observer
     template<typename Observer>
     template<typename _Rep, typename _Period>
     RemoveStatus
-    Observable<Observer, ObserverTrait>::TryRemoveObserver(HashType observer_hash,
+    Observable<Observer, ObserverTrait<Observer>>::TryRemoveObserver(HashType observer_hash,
                                                            duration<_Rep, _Period> timeout) noexcept
     {
         if (observers_.count(observer_hash) == 0) return RemoveStatus::NotFound;
@@ -148,7 +148,7 @@ namespace observer
     template<typename Observer>
     template<typename _Rep, typename _Period>
     RemoveStatus
-    Observable<Observer, ObserverTrait>::TryRemoveAll(duration<_Rep, _Period> timeout) noexcept
+    Observable<Observer, ObserverTrait<Observer>>::TryRemoveAll(duration<_Rep, _Period> timeout) noexcept
     {
         unique_lock<timed_mutex> lock(obervers_mu_, defer_lock);
         if (lock.try_lock_for(timeout))
@@ -162,7 +162,7 @@ namespace observer
     template<typename Observer>
     template<typename _Rep, typename _Period>
     RemoveStatus
-    Observable<Observer, ObserverTrait>::TryRemoveExpired(duration<_Rep, _Period> timeout) noexcept
+    Observable<Observer, ObserverTrait<Observer>>::TryRemoveExpired(duration<_Rep, _Period> timeout) noexcept
     {
         unique_lock<timed_mutex> lock(obervers_mu_, defer_lock);
         if (lock.try_lock_for(timeout))
@@ -176,7 +176,7 @@ namespace observer
     template<typename Observer>
     template<typename _Rep, typename _Period, typename... NotifyArguments>
     void
-    Observable<Observer, ObserverTrait>::TryNotifyObservers(duration<_Rep, _Period> timeout,
+    Observable<Observer, ObserverTrait<Observer>>::TryNotifyObservers(duration<_Rep, _Period> timeout,
                                                              NotifyArguments&&... args) noexcept
     {
         unique_lock<timed_mutex> lock(obervers_mu_, defer_lock);
@@ -192,7 +192,7 @@ namespace observer
 
     template<typename Observer>
     AddStatus
-    Observable<Observer, ObserverTrait>::AddObserverLocked(typename Observable<Observer, ObserverTrait>::ObserverWeak
+    Observable<Observer, ObserverTrait<Observer>>::AddObserverLocked(typename Observable<Observer, ObserverTrait<Observer>>::ObserverWeak
                                                            observer) noexcept
     {
         if (observer.expired()) return AddStatus::InvalidPtr;
@@ -208,7 +208,7 @@ namespace observer
 
     template<typename Observer>
     RemoveStatus
-    Observable<Observer, ObserverTrait>::RemoveObserverLocked(typename Observable<Observer, ObserverTrait>::ObserverWeak
+    Observable<Observer, ObserverTrait<Observer>>::RemoveObserverLocked(typename Observable<Observer, ObserverTrait<Observer>>::ObserverWeak
                                                               observer) noexcept
     {
         if (observer.expired()) return RemoveStatus::InvalidPtr;
@@ -224,7 +224,7 @@ namespace observer
 
     template<typename Observer>
     RemoveStatus
-    Observable<Observer, ObserverTrait>::RemoveObserverLocked(HashType observer_hash) noexcept
+    Observable<Observer, ObserverTrait<Observer>>::RemoveObserverLocked(HashType observer_hash) noexcept
     {
         if (observers_.count(observer_hash) == 0) return RemoveStatus::NotFound;
 
@@ -238,7 +238,7 @@ namespace observer
 
     template<typename Observer>
     RemoveStatus
-    Observable<Observer, ObserverTrait>::RemoveAllLocked() noexcept
+    Observable<Observer, ObserverTrait<Observer>>::RemoveAllLocked() noexcept
     {
         {
             lock_guard<timed_mutex> lock(obervers_mu_);
@@ -250,7 +250,7 @@ namespace observer
 
     template<typename Observer>
     RemoveStatus
-    Observable<Observer, ObserverTrait>::RemoveExpiredLocked() noexcept
+    Observable<Observer, ObserverTrait<Observer>>::RemoveExpiredLocked() noexcept
     {
         {
             remove_if(observers_.begin(), observers_.end(), [](const auto& element) { return element.second.expired(); });
@@ -263,7 +263,7 @@ namespace observer
     template<typename Observer>
     template<typename... NotifyArguments>
     void
-    Observable<Observer, ObserverTrait>::NotifyObserversLocked(NotifyArguments&&... args) noexcept
+    Observable<Observer, ObserverTrait<Observer>>::NotifyObserversLocked(NotifyArguments&&... args) noexcept
     {
         lock_guard<timed_mutex> lock(obervers_mu_);
         for (const auto& observer: observers_)
@@ -276,7 +276,7 @@ namespace observer
     template<typename Observer>
     template<typename... NotifyArguments>
     void
-    Observable<Observer, ObserverTrait>::AsyncNotifyObservers(NotifyArguments&&... args) noexcept
+    Observable<Observer, ObserverTrait<Observer>>::AsyncNotifyObservers(NotifyArguments&&... args) noexcept
     {
         decltype(observers_) observers_copy;
         {
@@ -284,20 +284,18 @@ namespace observer
             observers_copy = observers_;
         }
 
-        thread{[observers_copy](){
+        thread{[observers_copy](auto&&... args){
             for (const auto& observer: observers_copy)
             {
                 if (!observer.second.expired())
-                    async(std::launch::async, [&](auto&&... args){
-                        observer.second.lock()->HandleEvent(forward<NotifyArguments>(args)...);
-                    });
+                    observer.second.lock()->HandleEvent(forward<NotifyArguments>(args)...);
             }
         }, forward<NotifyArguments>(args)...}.detach();
     }
 
     template<typename Observer>
-    typename Observable<Observer, ObserverTrait>::CountType
-    Observable<Observer, ObserverTrait>::ObserversCount() noexcept
+    typename Observable<Observer, ObserverTrait<Observer>>::CountType
+    Observable<Observer, ObserverTrait<Observer>>::ObserversCount() noexcept
     {
         return observers_.size();
     }

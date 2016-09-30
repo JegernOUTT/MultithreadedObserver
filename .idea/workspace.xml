@@ -11,7 +11,13 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03c75e6e-31f5-49d9-901b-fe420e9093bd" name="Default" comment="" />
+    <list default="true" id="03c75e6e-31f5-49d9-901b-fe420e9093bd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/observer/Observable.hpp" afterPath="$PROJECT_DIR$/observer/Observable.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/observer_mock.hpp" afterPath="$PROJECT_DIR$/tests/observer_mock.hpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/tests.cpp" afterPath="$PROJECT_DIR$/tests/tests.cpp" />
+    </list>
     <ignored path="MultithreadedObserver.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,75 +36,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Observable.hpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Observable.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/observer/Observable.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+            <state relative-caret-position="620">
+              <caret line="121" column="64" selection-start-line="121" selection-start-column="64" selection-end-line="121" selection-end-column="64" />
               <folding>
                 <element signature="e#87#104#0" expanded="true" />
-                <element signature="e#934#990#0" expanded="true" />
-                <element signature="e#1039#1058#0" expanded="true" />
-                <element signature="e#1063#3003#1" expanded="false" />
-                <element signature="e#1415#1448#0" expanded="true" />
-                <element signature="e#1554#1587#0" expanded="true" />
-                <element signature="e#1699#1732#0" expanded="true" />
-                <element signature="e#1840#1873#0" expanded="true" />
-                <element signature="e#1966#1999#0" expanded="true" />
-                <element signature="e#2096#2158#0" expanded="true" />
-                <element signature="e#2597#2626#0" expanded="true" />
-                <element signature="e#2717#2746#0" expanded="true" />
-                <element signature="e#3018#3037#0" expanded="true" />
-                <element signature="e#3264#3283#0" expanded="true" />
-                <element signature="e#3365#3384#0" expanded="true" />
-                <element signature="e#3397#3430#0" expanded="true" />
-                <element signature="e#4100#4119#0" expanded="true" />
-                <element signature="e#4132#4165#0" expanded="true" />
-                <element signature="e#4909#4928#0" expanded="true" />
-                <element signature="e#4941#4974#0" expanded="true" />
-                <element signature="e#5527#5546#0" expanded="true" />
-                <element signature="e#5559#5592#0" expanded="true" />
-                <element signature="e#5963#5982#0" expanded="true" />
-                <element signature="e#5995#6028#0" expanded="true" />
-                <element signature="e#6493#6512#0" expanded="true" />
-                <element signature="e#6525#6587#0" expanded="true" />
-                <element signature="e#7157#7176#0" expanded="true" />
-                <element signature="e#7738#7757#0" expanded="true" />
-                <element signature="e#8329#8348#0" expanded="true" />
-                <element signature="e#8728#8747#0" expanded="true" />
-                <element signature="e#9006#9025#0" expanded="true" />
-                <element signature="e#9354#9373#0" expanded="true" />
-                <element signature="e#9386#9415#0" expanded="true" />
-                <element signature="e#9800#9819#0" expanded="true" />
-                <element signature="e#9832#9861#0" expanded="true" />
-                <element signature="e#10566#10585#0" expanded="true" />
+                <element signature="e#278#297#0" expanded="true" />
+                <element signature="e#966#1022#0" expanded="true" />
+                <element signature="e#1027#1055#1" expanded="false" />
+                <element signature="e#1070#1089#0" expanded="true" />
+                <element signature="e#1456#1489#0" expanded="true" />
+                <element signature="e#1595#1628#0" expanded="true" />
+                <element signature="e#1740#1773#0" expanded="true" />
+                <element signature="e#1881#1914#0" expanded="true" />
+                <element signature="e#2007#2040#0" expanded="true" />
+                <element signature="e#2137#2199#0" expanded="true" />
+                <element signature="e#2638#2667#0" expanded="true" />
+                <element signature="e#2758#2787#0" expanded="true" />
+                <element signature="e#3059#3078#0" expanded="true" />
+                <element signature="e#3335#3354#0" expanded="true" />
+                <element signature="e#3446#3465#0" expanded="true" />
+                <element signature="e#3478#3511#0" expanded="true" />
+                <element signature="e#3438#4187#0" expanded="false" />
+                <element signature="e#4201#4220#0" expanded="true" />
+                <element signature="e#4233#4266#0" expanded="true" />
+                <element signature="e#5030#5049#0" expanded="true" />
+                <element signature="e#5062#5095#0" expanded="true" />
+                <element signature="e#5658#5677#0" expanded="true" />
+                <element signature="e#5690#5723#0" expanded="true" />
+                <element signature="e#5650#6089#0" expanded="false" />
+                <element signature="e#6104#6123#0" expanded="true" />
+                <element signature="e#6136#6169#0" expanded="true" />
+                <element signature="e#6096#6630#0" expanded="false" />
+                <element signature="e#6644#6663#0" expanded="true" />
+                <element signature="e#6676#6738#0" expanded="true" />
+                <element signature="e#6636#7303#0" expanded="false" />
+                <element signature="e#7318#7337#0" expanded="true" />
+                <element signature="e#7919#7938#0" expanded="true" />
+                <element signature="e#8530#8549#0" expanded="true" />
+                <element signature="e#8939#8958#0" expanded="true" />
+                <element signature="e#9227#9246#0" expanded="true" />
+                <element signature="e#9585#9604#0" expanded="true" />
+                <element signature="e#9617#9646#0" expanded="true" />
+                <element signature="e#10041#10060#0" expanded="true" />
+                <element signature="e#10073#10102#0" expanded="true" />
+                <element signature="e#10736#10755#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/tests.cpp">
+      <file leaf-file-name="shared_ptr.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/c++/5/bits/shared_ptr.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trait.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/observer/Trait.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="121" selection-start-line="22" selection-start-column="121" selection-end-line="22" selection-end-column="121" />
-              <folding>
-                <element signature="e#238#250#0" expanded="true" />
-                <element signature="e#359#371#0" expanded="true" />
-                <element signature="e#500#512#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="441">
+              <caret line="327" column="0" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,17 +101,34 @@
       <file leaf-file-name="observer_mock.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/observer_mock.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="20" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="20" />
+            <state relative-caret-position="840">
+              <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
               <folding>
-                <element signature="e#468#483#0" expanded="true" />
-                <element signature="e#889#904#0" expanded="true" />
+                <element signature="e#97#114#0" expanded="true" />
+                <element signature="e#910#925#0" expanded="true" />
+                <element signature="e#1555#1570#0" expanded="true" />
+                <element signature="e#2357#2390#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/tests.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="975">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -129,8 +141,8 @@
         <option value="$PROJECT_DIR$/observer/main.cpp" />
         <option value="$PROJECT_DIR$/observer/SfinaeObserverTest.hpp" />
         <option value="$PROJECT_DIR$/tests/tests.cpp" />
-        <option value="$PROJECT_DIR$/tests/observer_mock.hpp" />
         <option value="$PROJECT_DIR$/observer/Observable.hpp" />
+        <option value="$PROJECT_DIR$/tests/observer_mock.hpp" />
       </list>
     </option>
   </component>
@@ -141,12 +153,12 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="186" />
-    <option name="y" value="433" />
-    <option name="width" value="725" />
-    <option name="height" value="518" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1015" />
+    <option name="height" value="1896" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -372,28 +384,29 @@
       <option name="presentableId" value="Default" />
       <updated>1475133874759</updated>
       <workItem from="1475133876163" duration="4100000" />
-      <workItem from="1475138169766" duration="19561000" />
+      <workItem from="1475138169766" duration="22415000" />
+      <workItem from="1475222152676" duration="2620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23661000" />
+    <option name="totallyTimeSpent" value="29135000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="186" y="433" width="725" height="518" extended-state="0" />
-    <editor active="false" />
+    <frame x="65" y="24" width="1015" height="1896" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13694581" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20021942" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19989017" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32945284" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.9505618" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23228996" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906404" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25617114" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25590336" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -416,83 +429,108 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/observer/Observable.hpp</url>
+          <line>119</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/observer/Observable.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4350">
+          <caret line="290" column="83" selection-start-line="290" selection-start-column="83" selection-end-line="290" selection-end-column="83" />
+          <folding>
+            <element signature="e#87#104#0" expanded="true" />
+            <element signature="e#278#297#0" expanded="true" />
+            <element signature="e#966#1022#0" expanded="true" />
+            <element signature="e#1027#1055#1" expanded="false" />
+            <element signature="e#1070#1089#0" expanded="true" />
+            <element signature="e#1456#1489#0" expanded="true" />
+            <element signature="e#1595#1628#0" expanded="true" />
+            <element signature="e#1740#1773#0" expanded="true" />
+            <element signature="e#1881#1914#0" expanded="true" />
+            <element signature="e#2007#2040#0" expanded="true" />
+            <element signature="e#2137#2199#0" expanded="true" />
+            <element signature="e#2638#2667#0" expanded="true" />
+            <element signature="e#2758#2787#0" expanded="true" />
+            <element signature="e#3059#3078#0" expanded="true" />
+            <element signature="e#3335#3354#0" expanded="true" />
+            <element signature="e#3446#3465#0" expanded="true" />
+            <element signature="e#3478#3511#0" expanded="true" />
+            <element signature="e#3438#4187#0" expanded="false" />
+            <element signature="e#4201#4220#0" expanded="true" />
+            <element signature="e#4233#4266#0" expanded="true" />
+            <element signature="e#5030#5049#0" expanded="true" />
+            <element signature="e#5062#5095#0" expanded="true" />
+            <element signature="e#5658#5677#0" expanded="true" />
+            <element signature="e#5690#5723#0" expanded="true" />
+            <element signature="e#5650#6089#0" expanded="false" />
+            <element signature="e#6104#6123#0" expanded="true" />
+            <element signature="e#6136#6169#0" expanded="true" />
+            <element signature="e#6096#6630#0" expanded="false" />
+            <element signature="e#6644#6663#0" expanded="true" />
+            <element signature="e#6676#6738#0" expanded="true" />
+            <element signature="e#6636#7303#0" expanded="false" />
+            <element signature="e#7318#7337#0" expanded="true" />
+            <element signature="e#7919#7938#0" expanded="true" />
+            <element signature="e#8530#8549#0" expanded="true" />
+            <element signature="e#8939#8958#0" expanded="true" />
+            <element signature="e#9227#9246#0" expanded="true" />
+            <element signature="e#9585#9604#0" expanded="true" />
+            <element signature="e#9617#9646#0" expanded="true" />
+            <element signature="e#10041#10060#0" expanded="true" />
+            <element signature="e#10073#10102#0" expanded="true" />
+            <element signature="e#10736#10755#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/tests.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/observer_mock.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="1" />
+          <folding>
+            <element signature="e#97#114#0" expanded="true" />
+            <element signature="e#910#925#0" expanded="true" />
+            <element signature="e#1555#1570#0" expanded="true" />
+            <element signature="e#2357#2390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Observable.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SfinaeObserverTest.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SfinaeObserverTest.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/5/bits/shared_ptr_base.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Observable.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2443">
-          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp" />
+    <entry file="file://$PROJECT_DIR$/Observable.hpp" />
+    <entry file="file://$PROJECT_DIR$/SfinaeObserverTest.hpp" />
+    <entry file="file://$PROJECT_DIR$/SfinaeObserverTest.hpp" />
+    <entry file="file://$PROJECT_DIR$/Observable.hpp" />
+    <entry file="file://$PROJECT_DIR$/main.cpp" />
     <entry file="file://$PROJECT_DIR$/observer/external/bandit/bandit/bandit.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding>
-            <element signature="e#223#241#0" expanded="false" />
-            <element signature="e#557#615#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -508,7 +546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -516,7 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="783">
           <caret line="1702" column="4" selection-start-line="1702" selection-start-column="4" selection-end-line="1702" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -528,80 +564,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/observer_mock.hpp">
+    <entry file="file://$PROJECT_DIR$/observer/Trait.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="20" />
+        <state relative-caret-position="405">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
-            <element signature="e#468#483#0" expanded="true" />
-            <element signature="e#889#904#0" expanded="true" />
+            <element signature="e#238#250#0" expanded="false" />
+            <element signature="e#359#371#0" expanded="false" />
+            <element signature="e#500#512#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/observer/Trait.hpp">
+    <entry file="file://$PROJECT_DIR$/observer/external/bandit/bandit/assertion_frameworks/snowhouse/snowhouse/constraints/constraints.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/observer/external/bandit/bandit/assertion_frameworks/snowhouse/snowhouse/snowhouse.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="22" column="121" selection-start-line="22" selection-start-column="121" selection-end-line="22" selection-end-column="121" />
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/observer/external/bandit/bandit/assertion_frameworks/snowhouse/snowhouse/constraints/equalsconstraint.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/unordered_map.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="301" column="0" selection-start-line="301" selection-start-column="0" selection-end-line="301" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/hashtable.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="506" column="0" selection-start-line="506" selection-start-column="0" selection-end-line="506" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/observer/external/bandit/bandit/assertion_frameworks/snowhouse/snowhouse/assert.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="831">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/observer/external/bandit/bandit/adapters/snowhouse.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/observer/external/bandit/bandit/grammar.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1236">
+          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/functional">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="2257" column="0" selection-start-line="2257" selection-start-column="0" selection-end-line="2257" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/chrono">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="809" column="0" selection-start-line="809" selection-start-column="0" selection-end-line="809" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/observer/Observable.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="121" column="64" selection-start-line="121" selection-start-column="64" selection-end-line="121" selection-end-column="64" />
           <folding>
-            <element signature="e#238#250#0" expanded="true" />
-            <element signature="e#359#371#0" expanded="true" />
-            <element signature="e#500#512#0" expanded="true" />
+            <element signature="e#87#104#0" expanded="true" />
+            <element signature="e#278#297#0" expanded="true" />
+            <element signature="e#966#1022#0" expanded="true" />
+            <element signature="e#1027#1055#1" expanded="false" />
+            <element signature="e#1070#1089#0" expanded="true" />
+            <element signature="e#1456#1489#0" expanded="true" />
+            <element signature="e#1595#1628#0" expanded="true" />
+            <element signature="e#1740#1773#0" expanded="true" />
+            <element signature="e#1881#1914#0" expanded="true" />
+            <element signature="e#2007#2040#0" expanded="true" />
+            <element signature="e#2137#2199#0" expanded="true" />
+            <element signature="e#2638#2667#0" expanded="true" />
+            <element signature="e#2758#2787#0" expanded="true" />
+            <element signature="e#3059#3078#0" expanded="true" />
+            <element signature="e#3335#3354#0" expanded="true" />
+            <element signature="e#3446#3465#0" expanded="true" />
+            <element signature="e#3478#3511#0" expanded="true" />
+            <element signature="e#3438#4187#0" expanded="false" />
+            <element signature="e#4201#4220#0" expanded="true" />
+            <element signature="e#4233#4266#0" expanded="true" />
+            <element signature="e#5030#5049#0" expanded="true" />
+            <element signature="e#5062#5095#0" expanded="true" />
+            <element signature="e#5658#5677#0" expanded="true" />
+            <element signature="e#5690#5723#0" expanded="true" />
+            <element signature="e#5650#6089#0" expanded="false" />
+            <element signature="e#6104#6123#0" expanded="true" />
+            <element signature="e#6136#6169#0" expanded="true" />
+            <element signature="e#6096#6630#0" expanded="false" />
+            <element signature="e#6644#6663#0" expanded="true" />
+            <element signature="e#6676#6738#0" expanded="true" />
+            <element signature="e#6636#7303#0" expanded="false" />
+            <element signature="e#7318#7337#0" expanded="true" />
+            <element signature="e#7919#7938#0" expanded="true" />
+            <element signature="e#8530#8549#0" expanded="true" />
+            <element signature="e#8939#8958#0" expanded="true" />
+            <element signature="e#9227#9246#0" expanded="true" />
+            <element signature="e#9585#9604#0" expanded="true" />
+            <element signature="e#9617#9646#0" expanded="true" />
+            <element signature="e#10041#10060#0" expanded="true" />
+            <element signature="e#10073#10102#0" expanded="true" />
+            <element signature="e#10736#10755#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/shared_ptr.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="327" column="0" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/shared_ptr_base.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="1055" column="0" selection-start-line="1055" selection-start-column="0" selection-end-line="1055" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/observer_mock.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="56" column="34" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+          <folding>
+            <element signature="e#97#114#0" expanded="true" />
+            <element signature="e#910#925#0" expanded="true" />
+            <element signature="e#1555#1570#0" expanded="true" />
+            <element signature="e#2357#2390#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/tests.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+        <state relative-caret-position="975">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/observer/Observable.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
-          <folding>
-            <element signature="e#87#104#0" expanded="true" />
-            <element signature="e#934#990#0" expanded="true" />
-            <element signature="e#1039#1058#0" expanded="true" />
-            <element signature="e#1063#3003#1" expanded="false" />
-            <element signature="e#1415#1448#0" expanded="true" />
-            <element signature="e#1554#1587#0" expanded="true" />
-            <element signature="e#1699#1732#0" expanded="true" />
-            <element signature="e#1840#1873#0" expanded="true" />
-            <element signature="e#1966#1999#0" expanded="true" />
-            <element signature="e#2096#2158#0" expanded="true" />
-            <element signature="e#2597#2626#0" expanded="true" />
-            <element signature="e#2717#2746#0" expanded="true" />
-            <element signature="e#3018#3037#0" expanded="true" />
-            <element signature="e#3264#3283#0" expanded="true" />
-            <element signature="e#3365#3384#0" expanded="true" />
-            <element signature="e#3397#3430#0" expanded="true" />
-            <element signature="e#4100#4119#0" expanded="true" />
-            <element signature="e#4132#4165#0" expanded="true" />
-            <element signature="e#4909#4928#0" expanded="true" />
-            <element signature="e#4941#4974#0" expanded="true" />
-            <element signature="e#5527#5546#0" expanded="true" />
-            <element signature="e#5559#5592#0" expanded="true" />
-            <element signature="e#5963#5982#0" expanded="true" />
-            <element signature="e#5995#6028#0" expanded="true" />
-            <element signature="e#6493#6512#0" expanded="true" />
-            <element signature="e#6525#6587#0" expanded="true" />
-            <element signature="e#7157#7176#0" expanded="true" />
-            <element signature="e#7738#7757#0" expanded="true" />
-            <element signature="e#8329#8348#0" expanded="true" />
-            <element signature="e#8728#8747#0" expanded="true" />
-            <element signature="e#9006#9025#0" expanded="true" />
-            <element signature="e#9354#9373#0" expanded="true" />
-            <element signature="e#9386#9415#0" expanded="true" />
-            <element signature="e#9800#9819#0" expanded="true" />
-            <element signature="e#9832#9861#0" expanded="true" />
-            <element signature="e#10566#10585#0" expanded="true" />
           </folding>
         </state>
       </provider>
