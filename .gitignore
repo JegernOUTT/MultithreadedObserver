@@ -6,5 +6,5 @@ bin
 build
 builds
 *.o
-bandit
+bandit/*
 .idea
