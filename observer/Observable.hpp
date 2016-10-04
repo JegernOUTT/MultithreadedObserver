@@ -37,6 +37,16 @@ namespace observer
     enum class AddStatus { Success, Timeout, AlreadyAdded, InvalidPtr };
     enum class RemoveStatus { Success, Timeout, NotFound, InvalidPtr };
 
+    template< typename ContainerT, typename PredicateT >
+    void erase_if(ContainerT& items, const PredicateT& predicate)
+    {
+        for( auto it = items.begin(); it != items.end(); )
+        {
+            if( predicate(*it) ) it = items.erase(it);
+            else ++it;
+        }
+    };
+
     template<typename Observer,
              typename Enable = void>
     class Observable
@@ -72,8 +82,11 @@ namespace observer
         static RemoveStatus RemoveExpiredLocked() noexcept;
         template<typename... NotifyArguments>
         static void NotifyObserversLocked(NotifyArguments&&...) noexcept;
+
         template<typename... NotifyArguments>
         static void AsyncNotifyObservers(NotifyArguments&&... args) noexcept;
+        template<typename Functional, typename... NotifyArguments>
+        static void AsyncNotifyObserversCallback(Functional callback, NotifyArguments&&... args) noexcept;
 
         static CountType ObserversCount() noexcept;
 
@@ -166,7 +179,7 @@ namespace observer
     {
         unique_lock<timed_mutex> lock(obervers_mu_, defer_lock);
         if (lock.try_lock_for(timeout))
-            remove_if(observers_.begin(), observers_.end(), [](const auto& element) { return element.second.expired(); });
+            erase_if(observers_, [](const auto& element) { return element.second.expired(); });
         else
             return RemoveStatus::Timeout;
 
@@ -253,7 +266,7 @@ namespace observer
     Observable<Observer, ObserverTrait<Observer>>::RemoveExpiredLocked() noexcept
     {
         {
-            remove_if(observers_.begin(), observers_.end(), [](const auto& element) { return element.second.expired(); });
+            erase_if(observers_, [](const auto& element) { return element.second.expired(); });
             observers_.clear();
         }
 
@@ -288,10 +301,32 @@ namespace observer
             for (const auto& observer: observers_copy)
             {
                 if (!observer.second.expired())
-                    observer.second.lock()->HandleEvent(forward<NotifyArguments>(args)...);
+                    observer.second.lock()->HandleEvent(args...);
             }
         }, forward<NotifyArguments>(args)...}.detach();
     }
+
+    template<typename Observer>
+    template<typename Functional, typename... NotifyArguments>
+    void
+    Observable<Observer, ObserverTrait<Observer>>::AsyncNotifyObserversCallback(Functional callback,
+                                                                                NotifyArguments&&... args) noexcept
+    {
+        decltype(observers_) observers_copy;
+        {
+            lock_guard<timed_mutex> lock(obervers_mu_);
+            observers_copy = observers_;
+        }
+
+        thread{[observers_copy, callback](auto&&... args){
+            for (const auto& observer: observers_copy)
+            {
+                if (!observer.second.expired())
+                    observer.second.lock()->HandleEvent(args...);
+            }
+            callback();
+        }, forward<NotifyArguments>(args)...}.detach();
+    };
 
     template<typename Observer>
     typename Observable<Observer, ObserverTrait<Observer>>::CountType

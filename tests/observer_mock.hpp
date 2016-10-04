@@ -37,8 +37,10 @@ namespace observertest
 
         template<typename... t>
         void HandleEvent(t&&... args){
-            auto tup = make_tuple(forward<t>(args)...);
+            val = make_tuple(forward<t>(args)...);
         }
+
+        tuple<string, int32_t> val;
 
     private:
         float hash_;
